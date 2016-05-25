@@ -1,1 +1,1 @@
-# projecteyler
+# projecteuler
