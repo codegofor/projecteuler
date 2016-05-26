@@ -9,14 +9,27 @@ package main
 import "fmt"
 
 func main() {
-	// Using a func expression just to be cool
-	fmt.Println(func() int {
-		var sum int
-		for i := 0; i < 1000; i++ {
-			if i%3 == 0 || i%5 == 0 {
-				sum += i
-			}
+	var sum int
+
+	for i := 0; i < 1000; i++ {
+		if i%3 == 0 || i%5 == 0 {
+			sum += i
 		}
-		return sum
-	}())
+	}
+
+	fmt.Println(sum)
+
+	// Another way, using an array index and func expression just to be cool
+	/*
+		var x [1000]int
+
+		fmt.Println(func() int {
+			for i, _ := range x {
+				if i%3 == 0 || i%5 == 0 {
+					x[0] += i
+				}
+			}
+			return x[0]
+		}())
+	*/
 }
